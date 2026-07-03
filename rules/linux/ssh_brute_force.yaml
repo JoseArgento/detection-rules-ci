@@ -1,0 +1,22 @@
+title: SSH Authentication Failure
+id: a15745b1-3e8e-4a3d-bff9-0ac392630e80
+status: experimental
+description: Detecta fallos de autenticacion SSH que pueden indicar fuerza bruta
+references:
+    - https://attack.mitre.org/techniques/T1110/001/
+author: Jose Argento
+date: 2026-07-03
+logsource:
+    product: linux
+    service: auth
+detection:
+    keywords:
+        - 'Failed password for'
+        - 'Invalid user'
+    condition: keywords
+falsepositives:
+    - Usuario legitimo que tipea mal su contrasena
+level: medium
+tags:
+    - attack.credential_access
+    - attack.t1110.001

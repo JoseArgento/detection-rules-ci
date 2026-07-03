@@ -1,0 +1,24 @@
+name: Validar reglas Sigma
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar sigma-cli y backend Loki
+        run: |
+          pip install sigma-cli
+          sigma plugin install loki
+
+      - name: Validar reglas
+        run: sigma check rules/
+
+      - name: Verificar conversion a LogQL
+        run: sigma convert -t loki rules/linux/ssh_brute_force.yaml
