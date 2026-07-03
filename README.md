@@ -1,6 +1,6 @@
 # detection-rules-ci
 
-![CI](https://github.com/JoseArgento/detection-rules-ci/actions/workflows/validate.yml/badge.svg)
+![CI](https://github.com/JoseArgento/detection-rules-ci/actions/workflows/validate.yaml/badge.svg)
 
 Detection-as-Code lab: Sigma rules validated and compiled to LogQL through a CI pipeline.
 
