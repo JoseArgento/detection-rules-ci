@@ -24,7 +24,7 @@ Every push triggers a GitHub Actions workflow that:
 
 ## Roadmap
 
-- [ ] Automated tests against sample logs (true positive / false positive regression)
+- [x] Automated tests against sample logs (true positive / false positive regression)
 - [ ] Web attack detections (path traversal, SQLi)
 - [ ] Alert deployment to Grafana
 
