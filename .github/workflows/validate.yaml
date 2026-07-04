@@ -21,7 +21,7 @@ jobs:
         run: sigma check rules/
 
       - name: Verificar conversion a LogQL
-        run: sigma convert -t loki rules/linux/ssh_brute_force.yaml
+        run: sigma convert -t loki rules/linux/
 
       - name: Instalar dependencias de test
         run: pip install pytest pysigma-backend-loki

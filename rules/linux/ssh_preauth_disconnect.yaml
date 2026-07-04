@@ -1,0 +1,23 @@
+title: SSH Preauth Disconnect
+id: 89e2940a-4e5f-4924-abd0-c8c3c8eeeb6e
+status: experimental
+description: Detecta desconexiones SSH antes de completar autenticacion, posible escaneo o fuerza bruta
+references:
+    - https://attack.mitre.org/techniques/T1110/001/
+author: Jose Argento
+date: 2026-07-03
+logsource:
+    product: linux
+    service: auth
+detection:
+    keywords:
+        - 'Disconnected from invalid user'
+        - 'Disconnected from authenticating user'
+    condition: keywords
+falsepositives:
+    - Clientes con red inestable que cortan la conexion
+    - Health checks o escaneos automatizados legitimos
+level: low
+tags:
+    - attack.credential_access
+    - attack.t1110.001

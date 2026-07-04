@@ -21,6 +21,7 @@ Every push triggers a GitHub Actions workflow that:
 | Rule | Technique | Level |
 |------|-----------|-------|
 | SSH brute force | [T1110.001](https://attack.mitre.org/techniques/T1110/001/) | Medium |
+| Preauth Disconnect | [T1110.001](https://attack.mitre.org/techniques/T1110/001/) | Low |
 
 ## Roadmap
 

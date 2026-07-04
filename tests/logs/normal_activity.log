@@ -3,3 +3,4 @@ Jul  3 09:15:22 wow-server sshd[1200]: pam_unix(sshd:session): session opened fo
 Jul  3 09:30:01 wow-server CRON[1305]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
 Jul  3 10:02:14 wow-server sshd[1200]: Received disconnect from 198.51.100.7 port 53210:11: disconnected by user
 Jul  3 10:02:14 wow-server sshd[1200]: pam_unix(sshd:session): session closed for user jose
+Jul  3 10:02:14 wow-server sshd[1200]: Disconnected from user jose 198.51.100.7 port 53210
