@@ -1,0 +1,15 @@
+# Entorno (Grafana/Loki)
+datasource_uid: dfpmdh15h9d6oc   # uid del datasource Loki en Grafana
+folder: Security                 # carpeta de Grafana donde viven las alertas
+group: sigma-generated           # nombre del grupo de evaluacion
+interval: 1m                     # cada cuanto evalua Grafana el grupo
+receiver: n8n                    # contact point (webhook a n8n)
+window: 5m                       # ventana del count_over_time
+
+rules:
+  ssh_brute_force.yaml:
+    threshold: 3        # dispara en el 4to intento, antes del ban de fail2ban (5)
+    for: 1m
+  ssh_preauth_disconnect.yaml:
+    threshold: 3        # 1 linea por intento post-tuning; ajustar con datos reales
+    for: 1m
