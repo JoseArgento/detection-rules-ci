@@ -6,14 +6,14 @@ from sigma.collection import SigmaCollection
 from sigma.backends.loki import LogQLBackend
 
 BASE = Path(__file__).resolve().parent.parent
-RULES_DIR = BASE / "rules" / "linux"
+RULES_DIR = BASE / "rules"   # raiz: las claves de config traen la subruta
 CONFIG_PATH = Path(__file__).resolve().parent / "rules-config.yaml"
 OUT_PATH = Path(__file__).resolve().parent / "generated" / "alert-rules.yaml"
 
 LOGQL_ENVELOPE = (
     "sum by (ip) (\n"
     "  count_over_time(\n"
-    '    {{job="systemd-journal"}} |~ `{regex}` '
+    '    {{job="{job}"}} |~ `{regex}` '
     "| regexp `(?P<ip>\\d+\\.\\d+\\.\\d+\\.\\d+)` [{window}]\n"
     "  )\n"
     ")"
@@ -47,7 +47,8 @@ def grafana_uid(sigma_rule) -> str:
 
 def build_alert(regex: str, sigma_rule, per_rule: dict, cfg: dict) -> dict:
     """Arma una alert rule con la estructura exacta del export."""
-    expr = LOGQL_ENVELOPE.format(regex=regex, window=cfg["window"])
+    job = per_rule.get("job", cfg["default_job"])
+    expr = LOGQL_ENVELOPE.format(regex=regex, window=cfg["window"], job=job)
     title = sigma_rule.title
     return {
         "uid": grafana_uid(sigma_rule),

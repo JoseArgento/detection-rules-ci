@@ -1,15 +1,38 @@
+# =====================================================================
+# Config de deploy — lo que Sigma NO modela vive aca:
+#   - identidad del entorno (datasource, receiver, folder)
+#   - umbrales de agregacion por regla y stream (job) de origen
+# Las claves de rules son rutas relativas a rules/ (soporta familias)
+# =====================================================================
+ 
 # Entorno (Grafana/Loki)
-datasource_uid: dfpmdh15h9d6oc   # uid del datasource Loki en Grafana
-folder: Security                 # carpeta de Grafana donde viven las alertas
-group: sigma-generated           # nombre del grupo de evaluacion
-interval: 1m                     # cada cuanto evalua Grafana el grupo
-receiver: n8n                    # contact point (webhook a n8n)
-window: 5m                       # ventana del count_over_time
-
+datasource_uid: dfpmdh15h9d6oc
+folder: Security
+group: sigma-generated
+interval: 1m
+receiver: n8n
+window: 5m
+default_job: systemd-journal     # job de Loki si la regla no especifica otro
+ 
 rules:
-  ssh_brute_force.yaml:
+  # Familia Linux / SSH
+  linux/ssh_brute_force.yaml:
     threshold: 3        # dispara en el 4to intento, antes del ban de fail2ban (5)
     for: 1m
-  ssh_preauth_disconnect.yaml:
-    threshold: 3        # 1 linea por intento post-tuning; ajustar con datos reales
+  linux/ssh_preauth_disconnect.yaml:
+    threshold: 3
+    for: 1m
+ 
+  # Familia VMaNGOS / realmd
+  vmangos/vmangos_wrong_password.yaml:
+    job: vmangos
+    threshold: 4        # dispara en el 5to intento, antes del lockout del guard (10)
+    for: 1m
+  vmangos/vmangos_ip_lockout.yaml:
+    job: vmangos
+    threshold: 0        # gt 0: UNA aparicion ya es ataque confirmado por la defensa
+    for: 0s             # sin espera: severidad high, notificar ya
+  vmangos/vmangos_protocol_scan.yaml:
+    job: vmangos
+    threshold: 3        # rafaga de escaneo; ajustar con datos reales de los bots
     for: 1m
