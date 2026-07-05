@@ -102,6 +102,7 @@ def build_alert(regex: str, sigma_rule, per_rule: dict, cfg: dict) -> dict:
         "for": per_rule["for"],
         "annotations": {
             "ip": "{{ $labels.ip }}",
+            "severity": sigma_rule.level.name.lower() if sigma_rule.level else "medium",
             "summary": f"{title}: actividad desde {{{{ $labels.ip }}}}",
         },
         "isPaused": False,
