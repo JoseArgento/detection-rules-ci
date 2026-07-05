@@ -1,0 +1,9 @@
+2026-07-05 04:12:11 [198.51.100.22] Connection accepted
+2026-07-05 04:12:12 ERROR: [Auth] got unknown packet cmd 22
+2026-07-05 04:12:12 [198.51.100.22] Connection closed
+2026-07-05 04:12:13 [198.51.100.71] Connection accepted
+2026-07-05 04:12:17 ERROR: [Auth] got unknown packet cmd 71
+2026-07-05 04:12:17 [198.51.100.71] Connection closed
+2026-07-05 04:23:56 [203.0.113.66] Connection accepted
+2026-07-05 04:23:56 ERROR: [Auth] got unknown packet cmd 104
+2026-07-05 04:23:56 [203.0.113.66] Connection closed

@@ -1,0 +1,21 @@
+title: VMaNGOS Protocol Scan
+id: d0339e6d-7708-4b4b-942d-c2b183da9dbb
+status: experimental
+description: Bytes que no corresponden al protocolo de auth de WoW llegando al realmd - firma de escaneo o fingerprinting, un cliente legitimo no puede generar esta linea
+references:
+    - https://attack.mitre.org/techniques/T1046/
+author: Jose Argento
+date: 2026-07-05
+logsource:
+    product: vmangos
+    service: realmd
+detection:
+    keywords:
+        - 'got unknown packet cmd'
+    condition: keywords
+falsepositives:
+    - Practicamente ninguno - clientes legitimos no envian opcodes desconocidos
+level: low
+tags:
+    - attack.discovery
+    - attack.t1046

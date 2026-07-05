@@ -1,0 +1,6 @@
+2026-07-05 04:55:40 [203.0.113.66] Connection accepted
+2026-07-05 04:55:40 [AuthChallenge] Account 'DOBLEPUPI' using IP '203.0.113.66' tried to login with wrong password!
+2026-07-05 04:55:40 [203.0.113.66] Connection closed
+2026-07-05 04:55:48 [203.0.113.66] Connection accepted
+2026-07-05 04:55:48 [AuthChallenge] IP '203.0.113.66' is temporarily locked after 10 failed attempts
+2026-07-05 04:55:48 [203.0.113.66] Connection closed

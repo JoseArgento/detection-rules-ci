@@ -21,7 +21,7 @@ import pytest
 from sigma.collection import SigmaCollection
 from sigma.backends.loki import LogQLBackend
 
-RULES = Path(__file__).parent.parent / "rules" / "linux"
+RULES = Path(__file__).parent.parent / "rules"
 LOGS = Path(__file__).parent / "logs"
 NORMAL_LOG = "normal_activity.log"  # corpus benigno compartido
 
@@ -30,8 +30,18 @@ NORMAL_LOG = "normal_activity.log"  # corpus benigno compartido
 # Agregar una regla nueva = agregar un pytest.param aca.
 # ---------------------------------------------------------------------------
 CASES = [
-    pytest.param("ssh_brute_force.yaml", "ssh_bruteforce.log", id="ssh-brute-force"),
-    pytest.param("ssh_preauth_disconnect.yaml", "ssh_preauth.log", id="ssh-preauth"),
+    # --- Familia Linux / SSH ---
+    pytest.param("linux/ssh_brute_force.yaml", "ssh_bruteforce.log",
+                 id="ssh-brute-force"),
+    pytest.param("linux/ssh_preauth_disconnect.yaml", "ssh_preauth.log",
+                 id="ssh-preauth"),
+    # --- Familia VMaNGOS / realmd ---
+    pytest.param("vmangos/vmangos_wrong_password.yaml", "vmangos_wrong_password.log",
+                 id="vmangos-wrong-password"),
+    pytest.param("vmangos/vmangos_ip_lockout.yaml", "vmangos_ip_lockout.log",
+                 id="vmangos-ip-lockout"),
+    pytest.param("vmangos/vmangos_protocol_scan.yaml", "vmangos_protocol_scan.log",
+                 id="vmangos-protocol-scan"),
 ]
 
 

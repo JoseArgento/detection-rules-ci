@@ -4,3 +4,10 @@ Jul  3 09:30:01 wow-server CRON[1305]: pam_unix(cron:session): session opened fo
 Jul  3 10:02:14 wow-server sshd[1200]: Received disconnect from 198.51.100.7 port 53210:11: disconnected by user
 Jul  3 10:02:14 wow-server sshd[1200]: pam_unix(sshd:session): session closed for user jose
 Jul  3 10:02:14 wow-server sshd[1200]: Disconnected from user jose 198.51.100.7 port 53210
+Jul  3 10:02:14 wow-server sshd[1200]: Disconnected from user jose 198.51.100.7 port 532102026-07-05 03:42:10 Core revision: 00133706b308f5ceb017 / 2026-06-17 06:50:47 +0200 / Linux_x64 (little-endian) [realm-daemon]
+2026-07-05 03:42:10 Using configuration file /opt/vmangos/config/realmd.conf.
+2026-07-05 03:42:10 Added realm "Disney"
+2026-07-05 03:50:00 [198.51.100.7] Connection accepted
+2026-07-05 03:50:05 [198.51.100.7] Connection closed
+2026-07-05 03:55:00 [198.51.100.7] Connection has reached MaxSessionDuration. Closing socket...
+2026-07-05 03:55:00 [198.51.100.7] Connection closed
