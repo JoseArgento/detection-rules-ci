@@ -35,6 +35,13 @@ CASES = [
                  id="ssh-brute-force"),
     pytest.param("linux/ssh_preauth_disconnect.yaml", "ssh_preauth.log",
                  id="ssh-preauth"),
+    pytest.param("linux/ssh_penalty_caused_crash.yaml", "ssh_penalty_caused_crash.log",
+                 id="ssh-penalty-caused-crash"),
+    # --- Familia Linux / integridad del host ---
+    pytest.param("linux/security_service_stopped.yaml", "security_service_stopped.log",
+                 id="security-service-stopped"),
+    pytest.param("linux/local_account_created.yaml", "local_account_created.log",
+                 id="local-account-created"),
     # --- Familia VMaNGOS / realmd ---
     pytest.param("vmangos/vmangos_wrong_password.yaml", "vmangos_wrong_password.log",
                  id="vmangos-wrong-password"),

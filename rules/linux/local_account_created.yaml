@@ -1,0 +1,22 @@
+title: Linux Local Account Created
+id: 791b1e63-d71e-4590-8716-78a04a959062
+status: experimental
+description: useradd registro la creacion de una cuenta local. Crear una cuenta propia es una tecnica clasica de persistencia despues de comprometer un host.
+references:
+    - https://attack.mitre.org/techniques/T1136/001/
+author: Jose Argento
+date: 2026-10-27
+logsource:
+    product: linux
+    service: useradd
+detection:
+    keywords:
+        - 'new user: name='
+    condition: keywords
+falsepositives:
+    - Cuentas creadas por el administrador (soar, lokitunnel)
+    - "Cuentas de sistema creadas por paquetes al instalar software (dnsmasq al instalar Docker, 2026-10-27). Filtrar por shell no sirve: lokitunnel es legitima y tampoco tiene shell"
+level: medium
+tags:
+    - attack.persistence
+    - attack.t1136.001

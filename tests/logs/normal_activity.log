@@ -11,3 +11,14 @@ Jul  3 10:02:14 wow-server sshd[1200]: Disconnected from user jose 198.51.100.7 
 2026-07-05 03:50:05 [198.51.100.7] Connection closed
 2026-07-05 03:55:00 [198.51.100.7] Connection has reached MaxSessionDuration. Closing socket...
 2026-07-05 03:55:00 [198.51.100.7] Connection closed
+Oct 27 11:38:41 valheim systemd[1]: Stopping fail2ban.service - Fail2Ban Service...
+Oct 27 11:38:41 valheim systemd[1]: Started fail2ban.service - Fail2Ban Service.
+Oct 27 11:41:28 valheim groupadd[193012]: new group: name=soar, GID=1002
+Oct 27 12:57:05 valheim sudo[201554]:     soar : PWD=/ ; USER=root ; COMMAND=/usr/local/bin/soar-ban.sh 203.0.113.60 severe
+Oct 27 18:27:06 valheim sshd-session[223895]: Accepted publickey for soar from 192.168.1.54 port 54328 ssh2: ED25519 SHA256:lC0iJchgAIm1lIcb3JXTWWzjl1qTaUZp6ByliPbTTls
+Oct 27 18:27:06 valheim sshd-session[223895]: pam_unix(sshd:session): session opened for user soar(uid=1002) by soar(uid=0)
+Oct 27 18:27:06 valheim systemd-logind[1279]: New session '1689' of user 'soar' with class 'user' and type 'tty'.
+Oct 27 18:27:06 valheim sshd-session[224016]: Disconnected from user soar 192.168.1.54 port 54328
+Oct 27 18:27:06 valheim sshd-session[223895]: pam_unix(sshd:session): session closed for user soar
+Oct 27 13:56:01 valheim lab-heartbeat[230011]: lab-heartbeat i3 alive
+Oct 27 12:57:05 valheim soar-ban[201560]: Ban ejecutado: ip=203.0.113.60 tier=severe jail=soar-severe

@@ -1,0 +1,27 @@
+title: Linux Security Service Stopped
+id: e57d9652-caa5-4b7e-af88-68e7fa90f621
+status: experimental
+description: systemd registro la detencion de un servicio de defensa del host (fail2ban, ssh o ufw). Un atacante con privilegios suele apagar las defensas antes de actuar. Complementa al dead man's switch, que cubre la caida del agente de logs.
+references:
+    - https://attack.mitre.org/techniques/T1685/
+author: Jose Argento
+date: 2026-10-27
+logsource:
+    product: linux
+    service: systemd
+detection:
+    keywords:
+        - 'Stopped fail2ban.service'
+        - 'Stopped ssh.service'
+        - 'Stopped ufw.service'
+    condition: keywords
+falsepositives:
+    - Mantenimiento del administrador (restart de fail2ban al cambiar jails)
+    - Apagado o reinicio del host (systemd detiene todos los servicios)
+    - "Gap conocido: 'ufw disable' no detiene ufw.service y no genera esta linea"
+level: medium
+tags:
+    # ATT&CK v19: T1562.001 se fusiono en T1685 (Disable or Modify Tools),
+    # bajo la tactica nueva Defense Impairment (TA0112).
+    - attack.defense-impairment
+    - attack.t1685

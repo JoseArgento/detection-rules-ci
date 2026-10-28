@@ -1,0 +1,4 @@
+Sep 07 21:51:56 valheim useradd[1670]: new user: name=valheim, UID=1001, GID=1001, home=/home/valheim, shell=/bin/bash, from=/dev/pts/1
+Oct 27 09:35:58 valheim useradd[179572]: new user: name=dnsmasq, UID=999, GID=65534, home=/var/lib/misc, shell=/usr/sbin/nologin, from=/dev/pts/2
+Oct 27 10:59:34 valheim useradd[189678]: new user: name=lokitunnel, UID=105, GID=108, home=/var/lib/lokitunnel, shell=/usr/sbin/nologin, from=/dev/pts/0
+Oct 27 11:41:28 valheim useradd[193017]: new user: name=soar, UID=1002, GID=1002, home=/home/soar, shell=/bin/bash, from=/dev/pts/0
