@@ -1,19 +1,27 @@
 # =====================================================================
-# Config de deploy — lo que Sigma NO modela vive aca:
+# Config de deploy - lo que Sigma NO modela vive aca:
 #   - identidad del entorno (datasource, receiver, folder)
 #   - umbrales de agregacion por regla y stream (job) de origen
+#   - agrupacion (ip / host) y destino de la notificacion
 # Las claves de rules son rutas relativas a rules/ (soporta familias)
+#
+# Opciones por regla:
+#   threshold  dispara cuando el conteo en `window` es > threshold
+#   for        cuanto tiene que sostenerse antes de notificar
+#   job        stream de Loki (default: default_job)
+#   ip         false = evento del host sin IP: agrupa por host (default true)
+#   receiver   contact point (default: receiver global = SOAR)
 # =====================================================================
- 
+
 # Entorno (Grafana/Loki)
 datasource_uid: dfpmdh15h9d6oc
 folder: Security
 group: sigma-generated
 interval: 1m
-receiver: n8n
+receiver: n8n                    # alertas con IP -> SOAR
 window: 5m
 default_job: systemd-journal     # job de Loki si la regla no especifica otro
- 
+
 rules:
   # Familia Linux / SSH
   linux/ssh_brute_force.yaml:
@@ -22,7 +30,22 @@ rules:
   linux/ssh_preauth_disconnect.yaml:
     threshold: 3
     for: 1m
- 
+  linux/ssh_penalty_caused_crash.yaml:
+    threshold: 0        # una sola penalidad "caused crash" ya es alta senal
+    for: 0s
+
+  # Familia Linux / integridad del host (sin IP -> Telegram directo)
+  linux/security_service_stopped.yaml:
+    ip: false
+    receiver: telegram-alertas
+    threshold: 0
+    for: 0s
+  linux/local_account_created.yaml:
+    ip: false
+    receiver: telegram-alertas
+    threshold: 0
+    for: 0s
+
   # Familia VMaNGOS / realmd
   vmangos/vmangos_wrong_password.yaml:
     job: vmangos

@@ -2,3 +2,6 @@ __pycache__/
 .pytest_cache/
 *.pyc
 .venv/
+# Salida de generate_alerts.py: se regenera siempre desde rules/.
+# La copia desplegada vive en wow-classic-secure-lab/grafana/provisioning/.
+deploy/generated/
