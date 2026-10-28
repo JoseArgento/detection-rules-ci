@@ -1,0 +1,35 @@
+============================================================
+  MITRE ATT&CK DETECTION COVERAGE
+============================================================
+  Covered techniques : 3 / 697  (0.4%)
+  Rules analyzed     : 5
+  ATT&CK version     : Enterprise ATT&CK (2026-04-14)
+
+  Per-tactic coverage
+  ------------------------------------------------------
+  Stealth                [--------------------]   0/148   0.0%
+  Persistence            [--------------------]   0/113   0.0%
+  Privilege Escalation   [--------------------]   0/96    0.0%
+  Credential Access      [#-------------------]   2/67    3.0%
+  Execution              [--------------------]   0/64    0.0%
+  Defense Impairment     [--------------------]   0/56    0.0%
+  Resource Development   [--------------------]   0/50    0.0%
+  Discovery              [--------------------]   1/49    2.0%
+  Reconnaissance         [--------------------]   0/46    0.0%
+  Command and Control    [--------------------]   0/45    0.0%
+  Collection             [--------------------]   0/41    0.0%
+  Impact                 [--------------------]   0/33    0.0%
+  Lateral Movement       [--------------------]   0/23    0.0%
+  Initial Access         [--------------------]   0/22    0.0%
+  Exfiltration           [--------------------]   0/19    0.0%
+
+  Covered techniques
+  ------------------------------------------------------
+  T1046     Network Service Discovery                x1
+  T1110     Brute Force                              x4
+  T1110.001 Password Guessing                        x4
+============================================================
+
+HTML report written to: C:\Users\jose_\OneDrive\Documentos\detection-rules-ci\docs\coverage\2026-10-27-antes.html
+JSON summary written to: C:\Users\jose_\OneDrive\Documentos\detection-rules-ci\docs\coverage\2026-10-27-antes.json
+Badge written to: C:\Users\jose_\OneDrive\Documentos\detection-rules-ci\docs\coverage\2026-10-27-antes.svg

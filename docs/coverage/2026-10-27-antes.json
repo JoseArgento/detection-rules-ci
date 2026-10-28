@@ -1,0 +1,154 @@
+{
+  "version": "Enterprise ATT&CK (2026-04-14)",
+  "rules_analyzed": 5,
+  "coverage": {
+    "covered": 3,
+    "covered_in_scope": 3,
+    "in_scope": 697,
+    "ratio": 0.0043
+  },
+  "scope": {
+    "include": [],
+    "ignore": [],
+    "ignored_count": 0,
+    "out_of_scope_count": 0
+  },
+  "unknown_technique_ids": [],
+  "unmapped_rules": [],
+  "covered_techniques": [
+    {
+      "id": "T1046",
+      "name": "Network Service Discovery",
+      "rules": [
+        "rules\\vmangos\\vmangos_protocol_scan.yaml"
+      ]
+    },
+    {
+      "id": "T1110",
+      "name": "Brute Force",
+      "rules": [
+        "rules\\linux\\ssh_brute_force.yaml",
+        "rules\\linux\\ssh_preauth_disconnect.yaml",
+        "rules\\vmangos\\vmangos_ip_lockout.yaml",
+        "rules\\vmangos\\vmangos_wrong_password.yaml"
+      ]
+    },
+    {
+      "id": "T1110.001",
+      "name": "Password Guessing",
+      "rules": [
+        "rules\\linux\\ssh_brute_force.yaml",
+        "rules\\linux\\ssh_preauth_disconnect.yaml",
+        "rules\\vmangos\\vmangos_ip_lockout.yaml",
+        "rules\\vmangos\\vmangos_wrong_password.yaml"
+      ]
+    }
+  ],
+  "tactics": [
+    {
+      "tactic": "stealth",
+      "name": "Stealth",
+      "covered": 0,
+      "total": 148,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "persistence",
+      "name": "Persistence",
+      "covered": 0,
+      "total": 113,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "privilege-escalation",
+      "name": "Privilege Escalation",
+      "covered": 0,
+      "total": 96,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "credential-access",
+      "name": "Credential Access",
+      "covered": 2,
+      "total": 67,
+      "ratio": 0.029850746268656716
+    },
+    {
+      "tactic": "execution",
+      "name": "Execution",
+      "covered": 0,
+      "total": 64,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "defense-impairment",
+      "name": "Defense Impairment",
+      "covered": 0,
+      "total": 56,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "resource-development",
+      "name": "Resource Development",
+      "covered": 0,
+      "total": 50,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "discovery",
+      "name": "Discovery",
+      "covered": 1,
+      "total": 49,
+      "ratio": 0.02040816326530612
+    },
+    {
+      "tactic": "reconnaissance",
+      "name": "Reconnaissance",
+      "covered": 0,
+      "total": 46,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "command-and-control",
+      "name": "Command and Control",
+      "covered": 0,
+      "total": 45,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "collection",
+      "name": "Collection",
+      "covered": 0,
+      "total": 41,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "impact",
+      "name": "Impact",
+      "covered": 0,
+      "total": 33,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "lateral-movement",
+      "name": "Lateral Movement",
+      "covered": 0,
+      "total": 23,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "initial-access",
+      "name": "Initial Access",
+      "covered": 0,
+      "total": 22,
+      "ratio": 0.0
+    },
+    {
+      "tactic": "exfiltration",
+      "name": "Exfiltration",
+      "covered": 0,
+      "total": 19,
+      "ratio": 0.0
+    }
+  ]
+}
